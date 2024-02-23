@@ -1,0 +1,4 @@
+{
+  "notificationUrl": "https://ntfy.your.server/your-topic",
+  "sendNotification": false
+}
