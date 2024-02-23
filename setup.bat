@@ -21,9 +21,9 @@ copy "%ScriptDir%setup.bat" "%DestinationFolder%"
 REM Change the current directory to the destination folder
 cd /d "%DestinationFolder%"
 
-REM Run setup.bat
-call setup.bat
+REM Schedule the task to run every time the user unlocks the system
+schtasks /create /tn "WinUp-Auto" /tr "%DestinationFolder%\WinUp-Auto.exe" /sc onlogon
 
-echo WinUp-Auto Installed to %DestinationFolder% 
-echo Navigate to %DestinationFolder% and edit the config.json file to enable Notifications
+echo Files copied to %DestinationFolder%
+echo Scheduled task added to run WinUp-Auto.exe on every unlock.
 pause
